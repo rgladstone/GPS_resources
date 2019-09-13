@@ -13,9 +13,9 @@ dates <- read.csv(paste("bacdacter_files/", args[1], "_dates.csv", sep=""), head
 rownames(dates) <- dates$ID
 cluster_dates <- dates[cluster_tree$tip.label,2]
 
-results_ran_dates <- bactdate(tree=cluster_tree, date=sample(cluster_dates), initMu = NA, initAlpha = NA, initSigma = NA,
+results_rand_dates <- bactdate(tree=cluster_tree, date=sample(cluster_dates), initMu = NA, initAlpha = NA, initSigma = NA,
                     updateMu = T, updateAlpha = T, updateSigma = T, updateRoot = T,
                     nbIts = as.numeric(args[2]), thin = ceiling(10000), useCoalPrior = T,
                     model = "mixedgamma", useRec = T, showProgress = F)
 
-save(results_ran_dates, file = paste("bacdacter_out/",args[1], "_bactdate.results_ran_dates.RData", sep=""))
+save(results_rand_dates, file = paste("bacdacter_out/",args[1], "_bactdate.results_rand_dates.RData", sep=""))
