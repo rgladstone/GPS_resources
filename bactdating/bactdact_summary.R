@@ -2,7 +2,7 @@ library(BactDating)
 library(ape)
 library(coda)
 
-setwd("/Users/rg9/rg9_documents/GPS/MGEN_bioresource/bactdating/")
+setwd("/Users/rg9/bactdating/")
 
 #function to convert bactdate mcmc to coda format
 as.mcmc.resBactDating <- function(x,burnin=0.1) {
